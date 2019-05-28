@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+// const port = 3000;
+
+// deploy on heroku
+const http = require('http');
+const port = process.env.PORT || 3000;
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Hello World</h1>');
+});
 
 // workshop
-
-app.get('/', (req, res) => {
-  res.send('Hi');
-});
 
 app.get('/user', (request, response) => {
   response.json({
@@ -361,32 +366,6 @@ app.get('/user', (request, response) => {
   });
 });
 
-// // A route /api/movies that returns a string
-// app.get('/api/movies', (req, res) => {
-//   res.send('All films');
-// });
-
-// // A route /api/movies/\<movie id\> that returns a JSON
-// app.get('/api/movies/<movie id>', (request, response) => {
-//   response.json({
-//     movie: 'movie',
-//   });
-// });
-
-// // A route /api/employee/ that returns a status 304
-// app.get('/api/employee/', (req, res) => {
-//   res.sendStatus(304);
-// });
-
-// // A route /api/employee?name=\<employee name\> that returns a 404 status and a string
-// app.get('/api/employee?name=<employee name>', (req, res) => {
-//   res.status(404).send('Cannot find!!!');
-// });
-
-app.listen(port, err => {
-  if (err) {
-    throw new Error('Something bad happened...');
-  }
-
-  console.log(`Server is listening on ${port}`);
+server.listen(port, () => {
+  console.log(`Server running at port ` + port);
 });
