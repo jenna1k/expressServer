@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 
 // workshop
 
-app.get('/', (request, response) => {
+app.get('/api/v1/users', (request, response) => {
   response.json([
     {
       key: 1,
