@@ -14,38 +14,36 @@ const port = process.env.PORT || 3000;
 // workshop
 
 app.get('/', (request, response) => {
-  response.json({
-    user: [
-      {
-        key: 1,
-        email: 'dajung@gmail.com',
-        password: '1234',
-        id: 'dajung',
-        name: 'Dajung Kim',
-      },
-      {
-        key: 2,
-        email: 'anastasiya@gmail.com',
-        password: '1234',
-        id: 'anastasiya',
-        name: 'Anastasiya Aliashkevich',
-      },
-      {
-        key: 3,
-        email: 'laura@gmail.com',
-        password: '1234',
-        id: 'laura',
-        name: 'Laura Sochaczewski',
-      },
-      {
-        key: 4,
-        email: 'sarah@gmail.com',
-        password: '1234',
-        id: 'sarah',
-        name: 'Sarah Wilsoncook',
-      },
-    ],
-  });
+  response.json([
+    {
+      key: 1,
+      email: 'dajung@gmail.com',
+      password: '1234',
+      id: 'dajung',
+      name: 'Dajung Kim',
+    },
+    {
+      key: 2,
+      email: 'anastasiya@gmail.com',
+      password: '1234',
+      id: 'anastasiya',
+      name: 'Anastasiya Aliashkevich',
+    },
+    {
+      key: 3,
+      email: 'laura@gmail.com',
+      password: '1234',
+      id: 'laura',
+      name: 'Laura Sochaczewski',
+    },
+    {
+      key: 4,
+      email: 'sarah@gmail.com',
+      password: '1234',
+      id: 'sarah',
+      name: 'Sarah Wilsoncook',
+    },
+  ]);
 });
 
 app.listen(port, () => {
