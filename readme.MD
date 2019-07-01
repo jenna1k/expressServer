@@ -1,4 +1,4 @@
-## JasonWebToken workshop
+## [JasonWebToken](https://github.com/auth0/node-jsonwebtoken) workshop
 
 ![](https://i.imgur.com/59rQnqs.png)
 
